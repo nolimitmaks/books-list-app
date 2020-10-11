@@ -1,6 +1,8 @@
 import React from 'react'
+import {connect} from 'react-redux'
 
-export default class BookList extends React.Component {
+
+class BookList extends React.Component {
 
     renderList() {
         return this.props.books.map(
@@ -16,3 +18,12 @@ export default class BookList extends React.Component {
         )
     }
 }
+
+// use ES6 
+function mapSteteToProps({books}) {
+    return {
+        books
+    }
+}
+
+export default connect(mapSteteToProps)(BookList)
